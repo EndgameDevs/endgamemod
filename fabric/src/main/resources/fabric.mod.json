@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "endgamemod",
+  "version": "${version}",
+  "name": "Endgame Mod",
+  "description": "Endgame Mod's description",
+  "authors": [
+    "DreamingCodes <https://dreaming.codes>",
+    "Andrea98",
+    "D0ctorWho",
+    "ENDERZOMBI102",
+    "raccoman <https://github.com/raccoman>"
+  ],
+  "contact": {
+    "website": "https://github.com/EndgameDevs/endgamemod",
+    "repo": "https://github.com/EndgameDevs/endgamemod",
+    "issues": "https://github.com/EndgameDevs/endgamemod/issues"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.endgame.endgamemod.fabric.EndgameModFabric"
+    ]
+  },
+  "mixins": [
+    "endgamemod.mixins.json",
+    "endgamemod-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.13",
+    "minecraft": ">=1.19.3"
+  }
+}
