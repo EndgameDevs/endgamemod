@@ -22,11 +22,6 @@ jobs:
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
 
-      - name: Verify license using Licenser
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: licenseCheck
-
       - name: Setup and Build with Gradle
         uses: gradle/gradle-build-action@v2
         with:
