@@ -23,6 +23,8 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+    modImplementation 'software.bernie.geckolib:geckolib-fabric-1.19.3:4.0.3'
 }
 
 processResources {
