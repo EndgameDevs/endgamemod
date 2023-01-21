@@ -21,6 +21,8 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+
+    modImplementation 'software.bernie.geckolib:geckolib-forge-1.19.3:4.0.3'
 }
 
 processResources {
