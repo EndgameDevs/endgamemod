@@ -2,7 +2,7 @@
   "jack_in_the_box_music": {
     "sounds": [
       {
-        "name": "endgamemod:jack_in_the_box_music",
+        "name": "endgamemod:example_animated_sound",
         "stream": true
       }
     ]

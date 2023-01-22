@@ -21,7 +21,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.endgame.endgamemod.fabric.EndgameModFabric"
+      "dev.endgame.fabric.EndgameModFabric"
     ]
   },
   "mixins": [

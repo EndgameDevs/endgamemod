@@ -1,6 +1,6 @@
-package dev.endgame.endgamemod.fabric;
+package dev.endgame.fabric;
 
-import dev.endgame.endgamemod.EndgameMod;
+import dev.endgame.common.EndgameMod;
 import net.fabricmc.api.ModInitializer;
 
 public class EndgameModFabric implements ModInitializer {
