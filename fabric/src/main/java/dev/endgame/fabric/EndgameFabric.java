@@ -1,11 +1,11 @@
 package dev.endgame.fabric;
 
-import dev.endgame.common.EndgameMod;
+import dev.endgame.common.Endgame;
 import net.fabricmc.api.ModInitializer;
 
-public class EndgameModFabric implements ModInitializer {
+public class EndgameFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        EndgameMod.init();
+        Endgame.init();
     }
 }

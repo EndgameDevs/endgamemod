@@ -3,7 +3,9 @@
   "minVersion": "0.8",
   "package": "dev.endgame.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
+  "parent": "endgamemod-common.mixins.json",
   "mixins": [
+    "AbstractFabricGeckoItem"
   ],
   "client": [
   ],

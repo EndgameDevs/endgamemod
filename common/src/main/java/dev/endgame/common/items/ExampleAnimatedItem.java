@@ -1,6 +1,6 @@
 package dev.endgame.common.items;
 
-import dev.endgame.common.EndgameMod;
+import dev.endgame.common.Endgame;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -33,7 +33,7 @@ public class ExampleAnimatedItem extends AbstractGeckoItem {
                     Player player = ClientUtils.getClientPlayer();
 
                     if (player != null) {
-                        player.playSound(EndgameMod.JackInTheBoxSound.get(), 1, 1);
+                        player.playSound(Endgame.JackInTheBoxSound.get(), 1, 1);
                     }
                 }));
     }
