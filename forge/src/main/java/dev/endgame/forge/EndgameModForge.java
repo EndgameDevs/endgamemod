@@ -1,7 +1,7 @@
 package dev.endgame.forge;
 
 import dev.architectury.platform.forge.EventBuses;
-import dev.endgame.common.Endgame;
+import dev.endgame.Endgame;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 

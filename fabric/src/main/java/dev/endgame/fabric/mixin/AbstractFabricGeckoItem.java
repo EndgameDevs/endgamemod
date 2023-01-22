@@ -1,6 +1,6 @@
 package dev.endgame.fabric.mixin;
 
-import dev.endgame.common.items.AbstractGeckoItem;
+import dev.endgame.items.AbstractGeckoItem;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.Item;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,14 +16,18 @@ import java.util.function.Supplier;
 @Mixin(AbstractGeckoItem.class)
 public abstract class AbstractFabricGeckoItem extends Item implements GeoItem {
 
+    protected final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
     @Shadow
     protected GeoItemRenderer<?> renderer;
-    protected final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
 
     public AbstractFabricGeckoItem(Properties properties) {
         super(properties);
     }
 
+    /**
+     * @author raccoman
+     * @reason createRendered is needed only for fabric
+     */
     @Overwrite(remap = false)
     public void createRenderer(Consumer<Object> consumer) {
         consumer.accept(new RenderProvider() {
@@ -34,6 +38,10 @@ public abstract class AbstractFabricGeckoItem extends Item implements GeoItem {
         });
     }
 
+    /**
+     * @author raccoman
+     * @reason createRendered is needed only for fabric
+     */
     @Overwrite(remap = false)
     public Supplier<Object> getRenderProvider() {
         return renderProvider;

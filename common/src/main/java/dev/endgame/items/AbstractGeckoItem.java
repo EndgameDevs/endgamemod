@@ -1,5 +1,6 @@
-package dev.endgame.common.items;
+package dev.endgame.items;
 
+import dev.architectury.injectables.annotations.PlatformOnly;
 import net.minecraft.world.item.Item;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
@@ -12,15 +13,15 @@ import java.util.function.Supplier;
 
 public abstract class AbstractGeckoItem extends Item implements GeoItem {
 
-    protected GeoItemRenderer<?> renderer;
     protected final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+    protected GeoItemRenderer<?> renderer;
 
     public AbstractGeckoItem(Properties properties, GeoItemRenderer<?> renderer) {
         super(properties);
         this.renderer = renderer;
+    }
 
-        // Register our item as server-side handled.
-        // This enables both animation data syncing and server-side animation triggering
+    protected void registerSyncedAnimatable() {
         SingletonGeoAnimatable.registerSyncedAnimatable(this);
     }
 
@@ -29,18 +30,22 @@ public abstract class AbstractGeckoItem extends Item implements GeoItem {
         return cache;
     }
 
-    public void initializeClient(Consumer<?> consumer) {
+    @PlatformOnly("forge")
+    @SuppressWarnings("unused")
+    public void initializeClient(@SuppressWarnings("unused") Consumer<?> consumer) {
         throw new AssertionError("This method should be overridden by the platform.");
     }
 
     @Override
+    @PlatformOnly("fabric")
     public void createRenderer(Consumer<Object> consumer) {
-        throw new RuntimeException("This method should be overridden by the platform.");
+        throw new AssertionError("This method should be overridden by the platform.");
     }
 
     @Override
+    @PlatformOnly("fabric")
     public Supplier<Object> getRenderProvider() {
-        throw new IllegalStateException("This method should be overridden by the platform.");
+        throw new AssertionError("This method should be overridden by the platform.");
     }
 
 }

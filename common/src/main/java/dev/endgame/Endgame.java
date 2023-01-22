@@ -1,8 +1,8 @@
-package dev.endgame.common;
+package dev.endgame;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import dev.endgame.common.items.ExampleAnimatedItem;
+import dev.endgame.items.ExampleAnimatedItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -15,7 +15,7 @@ public class Endgame {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(MOD_ID, Registries.SOUND_EVENT);
 
     public static final RegistrySupplier<Item> ExampleAnimated = ITEMS.register("example_animated", () -> new ExampleAnimatedItem(new Item.Properties()));
-    public static final RegistrySupplier<SoundEvent> JackInTheBoxSound = SOUNDS.register("example_animated", () -> SoundEvent.createFixedRangeEvent(new ResourceLocation(MOD_ID, "example_animated_sound"), 0));
+    public static final RegistrySupplier<SoundEvent> ExampleAnimatedSound = SOUNDS.register("example_animated", () -> SoundEvent.createFixedRangeEvent(new ResourceLocation(MOD_ID, "example_animated"), 0));
 
     public static void init() {
         ITEMS.register();

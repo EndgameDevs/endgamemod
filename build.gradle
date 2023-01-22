@@ -41,12 +41,6 @@ allprojects {
         maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
     }
 
-//    tasks.withType(Jar).tap {
-//        configureEach {
-//            duplicatesStrategy = DuplicatesStrategy.INCLUDE
-//        }
-//    }
-
     tasks.withType(JavaCompile).tap {
         configureEach {
             options.encoding = "UTF-8"

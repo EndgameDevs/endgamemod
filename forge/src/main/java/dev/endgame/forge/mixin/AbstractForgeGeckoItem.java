@@ -1,6 +1,6 @@
 package dev.endgame.forge.mixin;
 
-import dev.endgame.common.items.AbstractGeckoItem;
+import dev.endgame.items.AbstractGeckoItem;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;

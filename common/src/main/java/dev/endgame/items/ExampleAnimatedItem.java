@@ -1,6 +1,6 @@
-package dev.endgame.common.items;
+package dev.endgame.items;
 
-import dev.endgame.common.Endgame;
+import dev.endgame.Endgame;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -20,20 +20,20 @@ public class ExampleAnimatedItem extends AbstractGeckoItem {
 
     public ExampleAnimatedItem(Properties properties) {
         super(properties, new JackInTheBoxRenderer());
+        this.registerSyncedAnimatable();
     }
 
     // Let's add our animation controller
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "popup_controller", 20, state -> PlayState.STOP)
-                .triggerableAnim("box_open", POPUP_ANIM)
+        controllers.add(new AnimationController<>(this, "popup_controller", 20, state -> PlayState.STOP).triggerableAnim("box_open", POPUP_ANIM)
                 // We've marked the "box_open" animation as being triggerable from the server
                 .setSoundKeyframeHandler(event -> {
                     // Use helper method to avoid client-code in common class
                     Player player = ClientUtils.getClientPlayer();
 
                     if (player != null) {
-                        player.playSound(Endgame.JackInTheBoxSound.get(), 1, 1);
+                        player.playSound(Endgame.ExampleAnimatedSound.get(), 1, 1);
                     }
                 }));
     }
