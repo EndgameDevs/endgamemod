@@ -75,3 +75,9 @@ publishing {
         // Add repositories to publish to here.
     }
 }
+
+loom {
+    forge {
+        mixinConfig 'endgamemod.mixins.json'
+    }
+}

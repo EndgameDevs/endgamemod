@@ -29,6 +29,10 @@ public abstract class AbstractGeckoItem extends Item implements GeoItem {
         return cache;
     }
 
+    public void initializeClient(Consumer<?> consumer) {
+        throw new AssertionError("This method should be overridden by the platform.");
+    }
+
     @Override
     public void createRenderer(Consumer<Object> consumer) {
         throw new RuntimeException("This method should be overridden by the platform.");
