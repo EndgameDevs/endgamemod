@@ -41,18 +41,13 @@ public abstract class AbstractGeckoItem extends Item implements GeoItem {
     @Override
     @PlatformOnly("fabric")
     public void createRenderer(Consumer<Object> consumer) {
-        consumer.accept(new RenderProvider() {
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return renderer;
-            }
-        });
+        throw new AssertionError("This method should be overridden by the platform.");
     }
 
     @PlatformOnly("forge")
     @SuppressWarnings("unused")
     public void initializeClient(Consumer<Object> consumer) {
-        createRenderer(consumer);
+        throw new AssertionError("This method should be overridden by the platform.");
     }
 
     @Override

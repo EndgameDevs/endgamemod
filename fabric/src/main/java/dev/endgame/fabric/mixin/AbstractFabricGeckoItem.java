@@ -33,6 +33,11 @@ public abstract class AbstractFabricGeckoItem extends Item implements GeoItem {
         return renderProvider;
     }
 
+    /**
+     * @author raccoman
+     * @reason createRendered is needed only for fabric
+     */
+    @Overwrite(remap = false)
     public void createRenderer(Consumer<Object> consumer) {
         consumer.accept(new RenderProvider() {
             @Override
