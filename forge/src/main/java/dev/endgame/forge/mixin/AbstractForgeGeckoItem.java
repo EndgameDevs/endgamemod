@@ -19,9 +19,13 @@ public abstract class AbstractForgeGeckoItem extends Item implements GeoItem {
         super(properties);
     }
 
-    @Shadow
+    @Shadow(remap = false)
     protected abstract GeoItemRenderer<?> getRenderer();
 
+    /**
+     * @author raccoman
+     * @reason createRendered is needed only for fabric
+     */
     @Overwrite(remap = false)
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
