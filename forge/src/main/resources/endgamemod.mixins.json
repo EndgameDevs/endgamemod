@@ -1,11 +1,13 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.endgame.endgamemod.forge.mixin",
+  "package": "dev.endgame.forge.mixin",
   "compatibilityLevel": "JAVA_17",
+  "parent": "endgamemod-common.mixins.json",
   "mixins": [
   ],
   "client": [
+    "AbstractForgeGeckoItem"
   ],
   "injectors": {
     "defaultRequire": 1

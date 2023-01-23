@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.endgame.endgamemod.mixin",
+  "package": "dev.endgame.common.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
