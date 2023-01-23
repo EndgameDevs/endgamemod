@@ -18,7 +18,7 @@ public abstract class AbstractFabricGeckoItem extends Item implements GeoItem {
 
     protected final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
     @Shadow
-    protected GeoItemRenderer<?> renderer;
+    protected abstract GeoItemRenderer<?> getRenderer();
 
     public AbstractFabricGeckoItem(Properties properties) {
         super(properties);
@@ -29,22 +29,17 @@ public abstract class AbstractFabricGeckoItem extends Item implements GeoItem {
      * @reason createRendered is needed only for fabric
      */
     @Overwrite(remap = false)
+    public Supplier<Object> getRenderProvider() {
+        return renderProvider;
+    }
+
     public void createRenderer(Consumer<Object> consumer) {
         consumer.accept(new RenderProvider() {
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return renderer;
+                return getRenderer();
             }
         });
-    }
-
-    /**
-     * @author raccoman
-     * @reason createRendered is needed only for fabric
-     */
-    @Overwrite(remap = false)
-    public Supplier<Object> getRenderProvider() {
-        return renderProvider;
     }
 
 }

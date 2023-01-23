@@ -11,23 +11,23 @@ import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
 
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 @Mixin(AbstractGeckoItem.class)
 public abstract class AbstractForgeGeckoItem extends Item implements GeoItem {
-
-    @Shadow
-    protected GeoItemRenderer<?> renderer;
-
     public AbstractForgeGeckoItem(Properties properties) {
         super(properties);
     }
+
+    @Shadow
+    protected abstract GeoItemRenderer<?> getRenderer();
 
     @Overwrite(remap = false)
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return renderer;
+                return getRenderer();
             }
         });
     }

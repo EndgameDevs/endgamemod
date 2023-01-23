@@ -1,6 +1,10 @@
 package dev.endgame.items;
 
+import com.google.common.base.Suppliers;
+import dev.architectury.platform.Platform;
 import dev.endgame.Endgame;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -8,18 +12,20 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import software.bernie.example.client.renderer.item.JackInTheBoxRenderer;
+import software.bernie.example.item.JackInTheBoxItem;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.renderer.GeoItemRenderer;
 import software.bernie.geckolib.util.ClientUtils;
 
 public class ExampleAnimatedItem extends AbstractGeckoItem {
     private static final RawAnimation POPUP_ANIM = RawAnimation.begin().thenPlay("use.popup");
 
     public ExampleAnimatedItem(Properties properties) {
-        super(properties, new JackInTheBoxRenderer());
+        super(properties);
         this.registerSyncedAnimatable();
     }
 
@@ -45,5 +51,14 @@ public class ExampleAnimatedItem extends AbstractGeckoItem {
             triggerAnim(player, GeoItem.getOrAssignId(player.getItemInHand(hand), serverLevel), "popup_controller", "box_open");
 
         return super.use(level, player, hand);
+    }
+
+    @Override
+    @Environment(EnvType.CLIENT)
+    protected GeoItemRenderer<?> getRenderer() {
+        if(renderer == null) {
+            renderer = new JackInTheBoxRenderer();
+        }
+        return renderer;
     }
 }
