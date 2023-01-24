@@ -21,7 +21,7 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
-
+    modApi "me.shedaniel.cloth:cloth-config-forge:9.0.94"
     modImplementation 'software.bernie.geckolib:geckolib-forge-1.19.3:4.0.3'
 }
 
