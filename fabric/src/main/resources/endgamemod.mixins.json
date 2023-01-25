@@ -7,7 +7,8 @@
   "mixins": [
   ],
   "client": [
-    "AbstractFabricGeckoItem"
+    "AbstractFabricGeckoItem",
+    "AbstractFabricGeckoArmorItem"
   ],
   "injectors": {
     "defaultRequire": 1
