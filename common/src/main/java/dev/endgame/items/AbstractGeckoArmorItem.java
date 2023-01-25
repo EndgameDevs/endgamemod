@@ -19,7 +19,7 @@ public abstract class AbstractGeckoArmorItem extends ArmorItem implements GeoIte
 
     protected final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    protected HumanoidModel<LivingEntity> renderer;
+    protected GeoArmorRenderer<?> renderer;
 
     public AbstractGeckoArmorItem(ArmorMaterial armorMaterial, EquipmentSlot slot, Properties properties) {
         super(armorMaterial, slot, properties);
