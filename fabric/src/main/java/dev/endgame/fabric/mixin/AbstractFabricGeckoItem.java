@@ -17,7 +17,7 @@ import java.util.function.Supplier;
 public abstract class AbstractFabricGeckoItem extends Item implements GeoItem {
 
     protected final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
-    @Shadow
+    @Shadow(remap = false)
     protected abstract GeoItemRenderer<?> getRenderer();
 
     public AbstractFabricGeckoItem(Properties properties) {
