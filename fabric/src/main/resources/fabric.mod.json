@@ -22,6 +22,9 @@
   "entrypoints": {
     "main": [
       "dev.endgame.fabric.EndgameFabric"
+    ],
+    "client": [
+      "dev.endgame.fabric.ClientListener"
     ]
   },
   "mixins": [
