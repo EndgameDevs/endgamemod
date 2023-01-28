@@ -1,8 +1,8 @@
 {
-  "example_animated": {
+  "example_animated_item": {
     "sounds": [
       {
-        "name": "endgamemod:example_animated",
+        "name": "endgamemod:example_animated_item",
         "stream": true
       }
     ]
