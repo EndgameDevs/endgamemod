@@ -13,7 +13,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import static dev.endgame.Endgame.MIXER_BLOCK_ENTITY;
 
 public class MixerBlockEntity extends BlockEntity implements GeoBlockEntity {
-    private static final RawAnimation DEFAULT_ANIM = RawAnimation.begin();
+    private static final RawAnimation DEFAULT_ANIM = RawAnimation.begin().thenPlayAndHold("animation.model.foodinside");
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public MixerBlockEntity(BlockPos blockPos, BlockState blockState) {
