@@ -5,6 +5,7 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury:${rootProject.architectury_version}"
 
+    modApi 'me.shedaniel.cloth:cloth-config:9.0.94'
     modImplementation 'software.bernie.geckolib:geckolib-fabric-1.19.3:4.0.3'
 }
 
@@ -23,5 +24,7 @@ publishing {
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
         // Add repositories to publish to here.
+        maven { url "https://maven.shedaniel.me/" }
+        maven { url "https://maven.terraformersmc.com/releases/" }
     }
 }

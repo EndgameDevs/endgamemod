@@ -25,6 +25,8 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
     modImplementation 'software.bernie.geckolib:geckolib-fabric-1.19.3:4.0.3'
+    modApi "me.shedaniel.cloth:cloth-config-fabric:9.0.94"
+    modApi "com.terraformersmc:modmenu:5.0.2"
 }
 
 processResources {
