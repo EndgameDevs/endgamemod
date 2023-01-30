@@ -21,6 +21,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import java.util.Set;
 
 import static dev.endgame.Endgame.*;
+import static dev.endgame.registry.ItemRegistry.*;
 
 public class ExampleAnimatedArmorItem extends AbstractGeckoArmorItem{
     public ExampleAnimatedArmorItem(ArmorMaterial armorMaterial, EquipmentSlot slot, Properties properties) {
