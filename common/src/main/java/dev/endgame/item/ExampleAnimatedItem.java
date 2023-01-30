@@ -1,6 +1,5 @@
 package dev.endgame.item;
 
-import dev.endgame.Endgame;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.server.level.ServerLevel;
@@ -55,7 +54,7 @@ public class ExampleAnimatedItem extends AbstractGeckoItem {
     @Override
     @Environment(EnvType.CLIENT)
     protected GeoItemRenderer<?> getRenderer() {
-        if(renderer == null) {
+        if (renderer == null) {
             renderer = new JackInTheBoxRenderer();
         }
         return renderer;

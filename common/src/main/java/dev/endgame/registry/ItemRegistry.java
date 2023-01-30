@@ -17,9 +17,7 @@ import static dev.endgame.Endgame.MOD_ID;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registries.ITEM);
-    public static final CreativeTabRegistry.TabSupplier MOD_TAB = CreativeTabRegistry.create(
-            new ResourceLocation(MOD_ID, "creative_tab"),
-            () -> new ItemStack(Items.NETHER_STAR) // Icon
+    public static final CreativeTabRegistry.TabSupplier MOD_TAB = CreativeTabRegistry.create(new ResourceLocation(MOD_ID, "creative_tab"), () -> new ItemStack(Items.NETHER_STAR) // Icon
     );
     public static final RegistrySupplier<Item> ExampleAnimatedItem = ITEMS.register("example_animated_item", () -> new ExampleAnimatedItem(new Item.Properties().arch$tab(MOD_TAB)));
     public static final RegistrySupplier<Item> ExampleAnimatedArmorItemHelmet = ITEMS.register("example_animated_armor_helmet", () -> new ExampleAnimatedArmorItem(ArmorMaterials.NETHERITE, EquipmentSlot.HEAD, new Item.Properties().arch$tab(MOD_TAB)));
