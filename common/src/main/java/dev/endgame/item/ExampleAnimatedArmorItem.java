@@ -65,10 +65,10 @@ public class ExampleAnimatedArmorItem extends AbstractGeckoArmorItem {
 
             // Check each of the pieces match our set
             boolean isFullSet = wornArmor.containsAll(ObjectArrayList.of(
-                    ExampleAnimatedArmorItemBoots.get(),
-                    ExampleAnimatedArmorItemLeggings.get(),
-                    ExampleAnimatedArmorItemChestplate.get(),
-                    ExampleAnimatedArmorItemHelmet.get()));
+                    EXAMPLE_ANIMATED_ARMOR_BOOTS.get(),
+                    EXAMPLE_ANIMATED_ARMOR_LEGGINGS.get(),
+                    EXAMPLE_ANIMATED_ARMOR_CHESTPLATE.get(),
+                    EXAMPLE_ANIMATED_ARMOR_HELMET.get()));
 
             // Play the animation if the full set is being worn, otherwise stop
             return isFullSet ? PlayState.CONTINUE : PlayState.STOP;

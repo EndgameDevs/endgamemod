@@ -17,7 +17,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
 import software.bernie.geckolib.util.ClientUtils;
 
-import static dev.endgame.registry.SoundRegistry.ExampleAnimatedSound;
+import static dev.endgame.registry.SoundRegistry.EXAMPLE_ANIMATED_SOUND;
 
 public class ExampleAnimatedItem extends AbstractGeckoItem {
     private static final RawAnimation POPUP_ANIM = RawAnimation.begin().thenPlay("use.popup");
@@ -37,7 +37,7 @@ public class ExampleAnimatedItem extends AbstractGeckoItem {
                     Player player = ClientUtils.getClientPlayer();
 
                     if (player != null) {
-                        player.playSound(ExampleAnimatedSound.get(), 1, 1);
+                        player.playSound(EXAMPLE_ANIMATED_SOUND.get(), 1, 1);
                     }
                 }));
     }
