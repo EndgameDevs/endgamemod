@@ -10,7 +10,7 @@ import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import static dev.endgame.Endgame.MIXER_BLOCK_ENTITY;
+import static dev.endgame.registry.BlockEntityRegistry.MIXER_BLOCK_ENTITY;
 
 public class MixerBlockEntity extends BlockEntity implements GeoBlockEntity {
     private static final RawAnimation DEFAULT_ANIM = RawAnimation.begin().thenPlayAndHold("animation.model.foodinside");

@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.Nullable;
 
-import static dev.endgame.Endgame.MIXER_BLOCK_ENTITY;
+import static dev.endgame.registry.BlockEntityRegistry.MIXER_BLOCK_ENTITY;
 
 public class MixerBlock extends DirectionalBlock implements EntityBlock {
 
