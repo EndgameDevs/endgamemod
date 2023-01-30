@@ -1,7 +1,5 @@
-package dev.endgame.items;
+package dev.endgame.item;
 
-import com.google.common.base.Suppliers;
-import dev.architectury.platform.Platform;
 import dev.endgame.Endgame;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,7 +10,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import software.bernie.example.client.renderer.item.JackInTheBoxRenderer;
-import software.bernie.example.item.JackInTheBoxItem;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;

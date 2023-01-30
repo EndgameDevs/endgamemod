@@ -1,4 +1,4 @@
-package dev.endgame.items;
+package dev.endgame.item;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;

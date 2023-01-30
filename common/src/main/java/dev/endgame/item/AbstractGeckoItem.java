@@ -1,31 +1,27 @@
-package dev.endgame.items;
+package dev.endgame.item;
 
 import dev.architectury.injectables.annotations.PlatformOnly;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Item;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.renderer.GeoArmorRenderer;
+import software.bernie.geckolib.renderer.GeoItemRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public abstract class AbstractGeckoArmorItem extends ArmorItem implements GeoItem {
+public abstract class AbstractGeckoItem extends Item implements GeoItem {
 
     protected final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    protected GeoArmorRenderer<?> renderer;
+    protected GeoItemRenderer<?> renderer;
 
-    public AbstractGeckoArmorItem(ArmorMaterial armorMaterial, EquipmentSlot slot, Properties properties) {
-        super(armorMaterial, slot, properties);
+    public AbstractGeckoItem(Properties properties) {
+        super(properties);
     }
 
-    protected abstract GeoArmorRenderer<?> getRenderer();
+    protected abstract GeoItemRenderer<?> getRenderer();
 
     protected void registerSyncedAnimatable() {
         SingletonGeoAnimatable.registerSyncedAnimatable(this);

@@ -1,6 +1,6 @@
 package dev.endgame.forge.mixin;
 
-import dev.endgame.items.AbstractGeckoItem;
+import dev.endgame.item.AbstractGeckoItem;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -11,7 +11,6 @@ import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
 
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 @Mixin(AbstractGeckoItem.class)
 public abstract class AbstractForgeGeckoItem extends Item implements GeoItem {
