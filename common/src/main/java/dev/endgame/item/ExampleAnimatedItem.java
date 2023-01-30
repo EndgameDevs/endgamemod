@@ -1,8 +1,5 @@
-package dev.endgame.items;
+package dev.endgame.item;
 
-import com.google.common.base.Suppliers;
-import dev.architectury.platform.Platform;
-import dev.endgame.Endgame;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.server.level.ServerLevel;
@@ -12,7 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import software.bernie.example.client.renderer.item.JackInTheBoxRenderer;
-import software.bernie.example.item.JackInTheBoxItem;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -20,6 +16,8 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
 import software.bernie.geckolib.util.ClientUtils;
+
+import static dev.endgame.registry.SoundRegistry.EXAMPLE_ANIMATED_SOUND;
 
 public class ExampleAnimatedItem extends AbstractGeckoItem {
     private static final RawAnimation POPUP_ANIM = RawAnimation.begin().thenPlay("use.popup");
@@ -39,7 +37,7 @@ public class ExampleAnimatedItem extends AbstractGeckoItem {
                     Player player = ClientUtils.getClientPlayer();
 
                     if (player != null) {
-                        player.playSound(Endgame.ExampleAnimatedSound.get(), 1, 1);
+                        player.playSound(EXAMPLE_ANIMATED_SOUND.get(), 1, 1);
                     }
                 }));
     }
@@ -56,7 +54,7 @@ public class ExampleAnimatedItem extends AbstractGeckoItem {
     @Override
     @Environment(EnvType.CLIENT)
     protected GeoItemRenderer<?> getRenderer() {
-        if(renderer == null) {
+        if (renderer == null) {
             renderer = new JackInTheBoxRenderer();
         }
         return renderer;

@@ -1,4 +1,4 @@
-package dev.endgame.items;
+package dev.endgame.item;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
@@ -20,9 +20,9 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.Set;
 
-import static dev.endgame.Endgame.*;
+import static dev.endgame.registry.ItemRegistry.*;
 
-public class ExampleAnimatedArmorItem extends AbstractGeckoArmorItem{
+public class ExampleAnimatedArmorItem extends AbstractGeckoArmorItem {
     public ExampleAnimatedArmorItem(ArmorMaterial armorMaterial, EquipmentSlot slot, Properties properties) {
         super(armorMaterial, slot, properties);
     }
@@ -30,7 +30,7 @@ public class ExampleAnimatedArmorItem extends AbstractGeckoArmorItem{
     @Override
     @Environment(EnvType.CLIENT)
     protected GeoArmorRenderer<?> getRenderer() {
-        if(renderer == null) {
+        if (renderer == null) {
             renderer = new GeckoArmorRenderer();
         }
         return renderer;
@@ -65,10 +65,10 @@ public class ExampleAnimatedArmorItem extends AbstractGeckoArmorItem{
 
             // Check each of the pieces match our set
             boolean isFullSet = wornArmor.containsAll(ObjectArrayList.of(
-                    ExampleAnimatedArmorItemBoots.get(),
-                    ExampleAnimatedArmorItemLeggings.get(),
-                    ExampleAnimatedArmorItemChestplate.get(),
-                    ExampleAnimatedArmorItemHelmet.get()));
+                    EXAMPLE_ANIMATED_ARMOR_BOOTS.get(),
+                    EXAMPLE_ANIMATED_ARMOR_LEGGINGS.get(),
+                    EXAMPLE_ANIMATED_ARMOR_CHESTPLATE.get(),
+                    EXAMPLE_ANIMATED_ARMOR_HELMET.get()));
 
             // Play the animation if the full set is being worn, otherwise stop
             return isFullSet ? PlayState.CONTINUE : PlayState.STOP;
