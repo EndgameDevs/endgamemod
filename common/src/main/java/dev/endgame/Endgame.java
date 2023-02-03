@@ -1,6 +1,7 @@
 package dev.endgame;
 
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
+import dev.endgame.block.MixerMenuScreenHandler;
 import dev.endgame.client.renderer.block.MixerRenderer;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.inventory.MenuType;
@@ -13,14 +14,14 @@ import static dev.endgame.registry.SoundRegistry.SOUNDS;
 
 public class Endgame {
     public static final String MOD_ID = "endgamemod";
-    public static MenuType<MenuScreenHandler> MIXER_SCREEN_HANDLER;
+    public static MenuType<MixerMenuScreenHandler> MIXER_SCREEN_HANDLER;
 
     public static void init() {
+        BLOCKS.register();
         ITEMS.register();
         SOUNDS.register();
-        BLOCKS.register();
         BLOCK_ENTITIES.register();
-        MIXER_SCREEN_HANDLER = new MenuType<>(MenuScreenHandler::new);
+        MIXER_SCREEN_HANDLER = new MenuType<>(MixerMenuScreenHandler::new);
     }
 
     public static void initClient() {

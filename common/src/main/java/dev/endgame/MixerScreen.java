@@ -2,6 +2,7 @@ package dev.endgame;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.endgame.block.MixerMenuScreenHandler;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
@@ -9,11 +10,17 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-public class MixerScreen extends AbstractContainerScreen<MenuScreenHandler> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Endgame.MOD_ID, "textures/gui/nonesisteancora.png");
+public class MixerScreen extends AbstractContainerScreen<MixerMenuScreenHandler> {
+    private static final ResourceLocation TEXTURE = new ResourceLocation(Endgame.MOD_ID, "textures/gui/mixer.png");
 
-    public MixerScreen(MenuScreenHandler abstractContainerMenu, Inventory inventory, Component component) {
+    public MixerScreen(MixerMenuScreenHandler abstractContainerMenu, Inventory inventory, Component component) {
         super(abstractContainerMenu, inventory, component);
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        titleLabelX= ((imageWidth - font.width(title)) / 5)*4;
     }
 
     @Override
@@ -23,8 +30,15 @@ public class MixerScreen extends AbstractContainerScreen<MenuScreenHandler> {
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
-        blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
+        this.blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
 
+        renderProcess(poseStack,x,y);
+    }
+
+    private void renderProcess(PoseStack poseStack, int x, int y) {
+        if(menu.checkCrafting()) {
+            blit(poseStack, x + 52, y + 32, 179, 6, 17, menu.progressScaled());
+        }
     }
 
     @Override
