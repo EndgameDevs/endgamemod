@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="MIT"
+
+[[mods]]
+modId="endgamemod"
+version = "${version}"
+displayName="Endgame Mod"
+displayURL="https://github.com/EndgameDevs/endgamemod/"
+logoFile="logo.png"
+credits="All the GitHUB contributors https://github.com/EndgameDevs/endgamemod/graphs/contributors"
+authors="DreamingCodes"
+description="Endgame Mod's description"
+
+[[dependencies.endgamemod]]
+   modId="forge"
+   mandatory=true
+   versionRange = "[${forge_version},)"
+   ordering="NONE"
+   side="BOTH"
+
+[[dependencies.endgamemod]]
+   modId="minecraft"
+   mandatory=true
+   versionRange = "[${mc_version}]"
+   ordering="NONE"
+   side="BOTH"

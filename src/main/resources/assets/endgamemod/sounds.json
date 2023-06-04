@@ -1,0 +1,10 @@
+{
+  "example_animated_item": {
+    "sounds": [
+      {
+        "name": "endgamemod:example_animated_item",
+        "stream": true
+      }
+    ]
+  }
+}
