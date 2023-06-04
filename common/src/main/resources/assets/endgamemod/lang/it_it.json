@@ -4,5 +4,7 @@
   "category.endgame.armor": "Armatura",
   "key.endgame.armor1": "Armatura 1",
   "category.endgame.block": "Blocchi",
-  "key.endgame.block1": "Blocco 1"
+  "key.endgame.block1": "Blocco 1",
+  "block.endgame.mixer": "Mixer",
+  "block.endgamemod.mixer": "Mixer"
 }

@@ -25,6 +25,9 @@
     ],
     "modmenu": [
       "dev.endgame.fabric.Menu"
+    ],
+    "client": [
+      "dev.endgame.fabric.ClientListener"
     ]
   },
   "mixins": [
