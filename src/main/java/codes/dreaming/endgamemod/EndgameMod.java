@@ -3,6 +3,7 @@ package codes.dreaming.endgamemod;
 import codes.dreaming.endgamemod.block.MixerMenuScreenHandler;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -47,7 +48,7 @@ public class EndgameMod {
         ITEMS.register(modEventBus);
         SOUNDS.register(modEventBus);
         BLOCK_ENTITIES.register(modEventBus);
-
+        MenuScreens.register(MIXER_SCREEN_HANDLER, MixerScreen::new);
         MinecraftForge.EVENT_BUS.register(this);
     }
 }
