@@ -153,6 +153,7 @@ repositories {
     //     dir 'libs'
     // }
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    maven { url "https://maven.shedaniel.me/" }
 }
 
 dependencies {
@@ -173,6 +174,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
+    implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:8.2.88")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
